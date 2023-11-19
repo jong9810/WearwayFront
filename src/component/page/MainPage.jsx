@@ -22,10 +22,9 @@ const Container = styled.div`
 `;
 
 function MainPage(props) {
-    const navigate = useNavigate();
-
     return (
         <Wrapper>
+            메인페이지입니다.
             <Container>
                 <ItemButton img src="../img/ItemImg.png" alt=""></ItemButton>
             </Container>

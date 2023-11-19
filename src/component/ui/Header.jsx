@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import Image from "../img/img1.ico"
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   background-color: black;
@@ -9,13 +9,23 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 `
 
-const Logo = styled.img`
-  filter: invert(100%);
-  height: 40px;
-  width: 200px;
+const Wrapper2 = styled.div`
+  background-color: white;
+  display: flex;
+  height: 55px;
+  border-bottom: 0.5px solid grey;
+  flex-direction: row;
+  align-items: center;
+`
+
+const Logo = styled.span`
+  color: white;
+  margin-right: 20px;
+  font-size: 25px;
+  margin: 20px;
+  font-weight: 500;
 `
 
 const Search = styled.input`
@@ -27,30 +37,50 @@ const Search = styled.input`
 `
 
 const Menu = styled.span`
-  color: white;
-  margin-right: 20px;
-  font-size: 25px;
-  font-weight: bold;
+  color: black;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: normal;
+  &:hover{
+    text-decoration: underline;
+  }
 `
+const Login = styled.button`
+  height: 30px;
+  width: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border-width: 1px;
+  &:hover{
+    background-color: black;
+    color: white;
+  }
+`
+
 function Header(props) {
+    const navigate = useNavigate();
+
+    const navigateToLogin = () => {
+        navigate("/login");
+    };
+
     return (
-        <Wrapper>
+        <div>
             <Wrapper>
-                <a href="/">
-                    {/*<Logo src={Image} />*/}
-                    <a href="/"><Menu>WEARWAY</Menu></a>
+                <a href="/" style={{textDecoration: "none"}}>
+                    <Logo>WEARWAY</Logo>
                 </a>
                 <Search />
             </Wrapper>
-            <Wrapper>
-                <a href="/"><Menu>랭킹</Menu></a>
-                <a href="/"><Menu>업데이트</Menu></a>
-                <a href="/"><Menu>코디</Menu></a>
-                <a href="/"><Menu>세일</Menu></a>
-                <a href="/"><Menu>스페셜</Menu></a>
-            </Wrapper>
-        </Wrapper>
-
+            <Wrapper2>
+                <Login onClick={navigateToLogin}>로그인</Login>
+                <a href="/mypage"><Menu>마이페이지</Menu></a>
+                <a href="/cart"><Menu>장바구니</Menu></a>
+                <a href="/order"><Menu>주문배송조회</Menu></a>
+                <a href="/service"><Menu>고객센터</Menu></a>
+            </Wrapper2>
+        </div>
     )
 }
 

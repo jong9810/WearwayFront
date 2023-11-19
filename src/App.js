@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from 'axios';
+import GlobalStyles from '../src/component/styles/GlobalStyles'
 
 import {
   BrowserRouter,
@@ -10,6 +10,11 @@ import styled from "styled-components";
 // Pages
 import MainPage from './component/page/MainPage';
 import Header from "./component/ui/Header";
+import LoginPage from "./component/page/LoginPage";
+import OrderPage from "./component/page/OrderPage";
+import ServicePage from "./component/page/ServicePage";
+import MyPage from "./component/page/MyPage";
+import Cart from "./component/page/Cart";
 
 const MainTitleText = styled.p`
     font-size: 24px;
@@ -18,23 +23,21 @@ const MainTitleText = styled.p`
 `;
 
 function App(props) {
-    const [hello, setHello] = useState('')
-    useEffect(() => {
-        axios.get('/api/hello').then(response => setHello(response.data)).catch(error => console.log(error))
-    }, []);
-  /*return (
-      <BrowserRouter>
-        <MainTitleText>Wearway</MainTitleText>
-        <Routes>
-          <Route index element={<MainPage />} />
-        </Routes>
-      </BrowserRouter>
-  );*/
-    return (
-        <div>
-            <Header />
-            <div>백엔드에서 가져온 데이터입니다 : {hello}</div>
-        </div>
+    return(
+        <BrowserRouter>
+            <div className="App">
+                <GlobalStyles />
+                <Header />
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/mypage" element={<MyPage />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/order" element={<OrderPage />} />
+                    <Route path="/service" element={<ServicePage />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
     )
 }
 
