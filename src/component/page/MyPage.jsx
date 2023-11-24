@@ -1,7 +1,43 @@
-import React from "react"
+import React from "react";
+import styled from "styled-components";
+import MyInform from "./mypage/MyInform";
+import MyPageSidebar from "./mypage/MyPageSidebar";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  color: white;
+`;
+
+const BodyWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  height: 100%;
+`;
 
 function MyPage(props) {
-    return <div>마이페이지입니다.</div>
+    return (
+        <Wrapper>
+            <HeaderWrapper>
+                <MyInform />
+            </HeaderWrapper>
+            <BodyWrapper>
+                <MyPageSidebar />
+            </BodyWrapper>
+        </Wrapper>
+    );
 }
 
 export default MyPage;
