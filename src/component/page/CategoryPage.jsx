@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Sidebar from "../ui/Sidebar";
+import {Link, useLocation} from "react-router-dom"
 
 const CategoryWrapper = styled.div`
   clear: both;
@@ -54,21 +55,32 @@ const Hover = styled.span`
     text-decoration-color: black;
     text-decoration-style: solid;
   }
-  &:visited{
-    text-decoration-color: none;
-  }
 `
 function CategoryPage(props) {
+    const location = useLocation();
+    const category = location.state.category;
+    const subCategory = location.state.subCategory;
+    const categoryNumber = location.state.categoryNumber;
+    const subCategoryNumber = location.state.subCategoryNumber;
+    console.log(location);
+    console.log(subCategory);
     return (
         <CategoryWrapper>
             <Sidebar></Sidebar>
             <RightArea>
                 <Division1>
-                    <a href="/">&nbsp;&nbsp;&nbsp;&nbsp;<Hover>무신사 스토어</Hover></a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
-                    <a href="/category"><Hover>카테고리</Hover></a>
+                    <Link to="/">&nbsp;&nbsp;&nbsp;&nbsp;<Hover>무신사 스토어</Hover></Link>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
+                    <Link to={`/categories/item/${categoryNumber}`} state={{category: `${category}`, categoryNumber: `${categoryNumber}`}}><Hover>{category}</Hover></Link>
+                    {
+                        subCategory === undefined ? null :
+                            <>
+                                <span>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;</span>
+                                <Link to={`/categories/item/${subCategoryNumber}`} state={{subCategory: `${subCategory}`, category: `${category}`, categoryNumber: `${categoryNumber}`, subCategoryNumber: `${subCategoryNumber}`}}><Hover>{subCategory}</Hover></Link>
+                            </>
+                    }
                 </Division1>
                 <Division2>
-                    &nbsp;Category
+                    &nbsp;{category}
                 </Division2>
             </RightArea>
         </CategoryWrapper>

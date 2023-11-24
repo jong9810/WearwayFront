@@ -24,7 +24,7 @@ function App(props) {
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/order" element={<OrderPage />} />
                     <Route path="/service" element={<ServicePage />} />
-                    <Route path="/category" element={<Category />} />
+                    <Route path="/categories/item/:categorynumber" element={<Category />} />
                 </Routes>
             </div>
         </BrowserRouter>
