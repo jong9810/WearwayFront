@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Sidebar from "../ui/Sidebar";
+import {Link} from "react-router-dom";
 
 const CategoryWrapper = styled.div`
   clear: both;
@@ -23,7 +24,7 @@ const RightArea = styled.div`
   right: 0px;
   min-width: 1291px;
   height: 2000px;
-  border-left: 1px solid rgb(221, 221, 221);
+  border-left: 1px solid rgb(208, 208, 208);
   box-sizing: border-box;
 `
 
@@ -89,8 +90,8 @@ function ServicePage(props) {
             <Sidebar></Sidebar>
             <RightArea>
                 <Division1>
-                    <a href="/">&nbsp;&nbsp;&nbsp;&nbsp;<Hover>무신사 스토어</Hover></a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
-                    <a href="/service"><Hover>고객센터</Hover></a>
+                    <Link to="/">&nbsp;&nbsp;&nbsp;&nbsp;<Hover>무신사 스토어</Hover></Link>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
+                    <Link to="/service"><Hover>고객센터</Hover></Link>
                 </Division1>
                 <Division2>
                     &nbsp;CS Center

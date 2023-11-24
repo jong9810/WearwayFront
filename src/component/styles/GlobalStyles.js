@@ -12,7 +12,11 @@ const GlobalStyles = createGlobalStyle`
    input {
        outline: none;
    }
-   
+   .App {
+     display: block;
+     min-height: 100%;
+     width: 1560px;
+   }
 `
 
 export default GlobalStyles;

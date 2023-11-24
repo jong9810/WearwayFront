@@ -19,8 +19,8 @@ import MemberBenefitPage from "./component/page/MemberBenefitPage";
 function App(props) {
     return(
         <BrowserRouter>
-            <div className="App">
-                <GlobalStyles />
+            <GlobalStyles />
+                <div className="App">
                 <Header />
                 <Routes>
                     <Route path="/" element={<MainPage />} />

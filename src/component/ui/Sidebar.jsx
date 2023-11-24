@@ -11,16 +11,13 @@ const SidebarWrapper = styled.div`
   padding: 10px;
   display: block;
   background-color: white;
-  width: 260px;
+  width: 270px;
   height: 100%;
   margin: 0;
   font-size: 12px;
   color: black;
   flex-direction: column;
   text-align: center;
-  border-right-color: rgb(228, 228, 228);
-  border-right-width: 1.5px;
-  border-right-style: solid;
 `
 
 const Tablist = styled.div`
@@ -68,7 +65,7 @@ const MenuGrid = styled.div`
   line-height: 35px;
   position: relative;
   font-size: 12px;
-  color: rgb(228, 228, 228);
+  color: rgb(208, 208, 208);
   justify-content: start;
   align-items: start;
   justify-items: start;
@@ -77,7 +74,7 @@ const MenuGrid = styled.div`
       let childCnt = parseInt((props.children.length + 1) / 2);
       return (props.hbg1 === props.hbg2) ? `${childCnt * 40}px` : `0`;
   }};
-  border-bottom-color: rgb(228,228,228);
+  border-bottom-color: rgb(208,208,208);
   border-bottom-style: solid;
   border-bottom-width: 1px;
   transition-duration: 0.3s;

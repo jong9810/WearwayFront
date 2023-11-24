@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components"
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const Wrapper = styled.div`
   background-color: white;
   display: flex;
   height: 55px;
-  border-bottom: 1.5px solid rgb(228, 228, 228);
+  border-bottom: 1.5px solid rgb(208, 208, 208);
   flex-direction: row;
   align-items: center;
 `
@@ -39,10 +39,10 @@ function WhiteHeader(props) {
     return (
             <Wrapper>
                 <Login onClick={navigateToLogin}>로그인</Login>
-                <a href="/mypage"><Menu>마이페이지</Menu></a>
-                <a href="/cart"><Menu>장바구니</Menu></a>
-                <a href="/order"><Menu>주문배송조회</Menu></a>
-                <a href="/service"><Menu>고객센터</Menu></a>
+                <Link to="/mypage"><Menu>마이페이지</Menu></Link>
+                <Link to="/cart"><Menu>장바구니</Menu></Link>
+                <Link to="/order"><Menu>주문배송조회</Menu></Link>
+                <Link to="/service"><Menu>고객센터</Menu></Link>
             </Wrapper>
     )
 }

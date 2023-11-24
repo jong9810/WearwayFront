@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const MyInformWrapper = styled.div`
   width: 75%;
@@ -39,11 +40,11 @@ function MyInform(props) {
         <>
             <MyInformWrapper>
                 <MyInformHeader>
-                    <a href={"/mypage"}><span style={{fontSize: "25px", color: "white"}}>My Page</span></a>
+                    <Link to={"/mypage"}><span style={{fontSize: "25px", color: "white"}}>My Page</span></Link>
                     <div>
-                        <a href={"/cart"}><MyInformMenu>장바구니</MyInformMenu></a>
-                        <a href={"/service"}><MyInformMenu>고객센터</MyInformMenu></a>
-                        <a href={"/main"}><MyInformMenu>로그아웃</MyInformMenu></a>
+                        <Link to={"/cart"}><MyInformMenu>장바구니</MyInformMenu></Link>
+                        <Link to={"/service"}><MyInformMenu>고객센터</MyInformMenu></Link>
+                        <Link to={"/main"}><MyInformMenu>로그아웃</MyInformMenu></Link>
                     </div>
                 </MyInformHeader>
                 <MyInformBody>

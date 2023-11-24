@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Wrapper = styled.div`
   background-color: black;
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
 `
 
 const Logo = styled.span`
@@ -38,9 +39,9 @@ function Header(props) {
 
     return (
             <Wrapper>
-                <a href="/" style={{textDecoration: "none"}}>
+                <Link to="/" style={{textDecoration: "none"}}>
                     <Logo>WEARWAY</Logo>
-                </a>
+                </Link>
                 <Search />
             </Wrapper>
     )
