@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import styled from 'styled-components';
 
-function MyPageMain(props) {
+function WriteReviewPage(props) {
     return (
         <div>
 
@@ -9,4 +10,4 @@ function MyPageMain(props) {
     );
 }
 
-export default MyPageMain;
+export default WriteReviewPage;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import MyInform from "./mypage/MyInform";
-import MyPageSidebar from "./mypage/MyPageSidebar";
+import MyInform from "./mypage/ui/MyInform";
+import MyPageSidebar from "./mypage/ui/MyPageSidebar";
 
 const Wrapper = styled.div`
   display: flex;
