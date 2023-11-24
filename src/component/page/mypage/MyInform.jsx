@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import MyPageHeader from "./MyPageHeader";
 
 const MyInformWrapper = styled.div`
   width: 75%;
@@ -39,7 +38,6 @@ function MyInform(props) {
     return (
         <>
             <MyInformWrapper>
-                <MyPageHeader />
                 <MyInformHeader>
                     <a href={"/mypage"}><span style={{fontSize: "25px", color: "white"}}>My Page</span></a>
                     <div>
@@ -50,7 +48,7 @@ function MyInform(props) {
                 </MyInformHeader>
                 <MyInformBody>
                     <div style={{width: "50%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center"}}>
-                        <div style={{width: "200px", height: "200px", borderRadius: "100px", backgroundColor: "lightgray", marginLeft: "20px", marginRight: "50px"}}><img /></div>
+                        <div style={{width: "200px", height: "200px", borderRadius: "500px", backgroundColor: "lightgray", marginLeft: "20px", marginRight: "50px"}}><img /></div>
                         <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
                             <div style={{marginBottom: "10px"}}>
                                 <span style={{fontSize: "55px", fontWeight: "900"}}>사용자 닉네임</span>

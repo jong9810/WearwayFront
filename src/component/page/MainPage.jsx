@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Sidebar from "../ui/Sidebar";
+import WhiteHeader from "../ui/WhiteHeader";
 
 const Wrapper = styled.div`
   clear: both;
@@ -17,9 +18,12 @@ const Wrapper = styled.div`
 
 function MainPage(props) {
     return (
-        <Wrapper>
-            <Sidebar></Sidebar>
-        </Wrapper>
+        <div>
+            <WhiteHeader></WhiteHeader>
+            <Wrapper>
+                <Sidebar></Sidebar>
+            </Wrapper>
+        </div>
     )
 }
 

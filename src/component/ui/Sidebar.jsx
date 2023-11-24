@@ -72,11 +72,16 @@ const MenuGrid = styled.div`
   align-items: start;
   justify-items: start;
   width: 230px;
-  height : ${(props) => ((props.hbg1 === props.hbg2) ? `80px` : `0`)};
+  max-height : ${(props) => {
+      let childCnt = parseInt(props.children.length / 2);
+      return (props.hbg1 === props.hbg2) ? `${childCnt * 40}px` : `0`;
+  }};
   border-bottom-color: rgb(228,228,228);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: ease-out;
   overflow: hidden;
 `
 
@@ -96,6 +101,7 @@ function Sidebar(props) {
     const changeMenu = (props) => {
         if(Menu === props) setMenu("None");
         else setMenu(props);
+        console.log("change");
     }
 
     return (
