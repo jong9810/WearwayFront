@@ -15,7 +15,7 @@ const Wrapper2 = styled.div`
   background-color: white;
   display: flex;
   height: 55px;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 1.5px solid rgb(228, 228, 228);
   flex-direction: row;
   align-items: center;
 `
@@ -39,7 +39,7 @@ const Search = styled.input`
 const Menu = styled.span`
   color: black;
   padding: 10px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: normal;
   &:hover{
     text-decoration: underline;

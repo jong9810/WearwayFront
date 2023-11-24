@@ -1,12 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import GlobalStyles from '../src/component/styles/GlobalStyles'
-
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import styled from "styled-components";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 // Pages
 import MainPage from './component/page/MainPage';
 import Header from "./component/ui/Header";
@@ -15,12 +9,7 @@ import OrderPage from "./component/page/OrderPage";
 import ServicePage from "./component/page/ServicePage";
 import MyPage from "./component/page/MyPage";
 import Cart from "./component/page/Cart";
-
-const MainTitleText = styled.p`
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-`;
+import Category from "./component/page/CategoryPage"
 
 function App(props) {
     return(
@@ -35,6 +24,7 @@ function App(props) {
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/order" element={<OrderPage />} />
                     <Route path="/service" element={<ServicePage />} />
+                    <Route path="/category" element={<Category />} />
                 </Routes>
             </div>
         </BrowserRouter>

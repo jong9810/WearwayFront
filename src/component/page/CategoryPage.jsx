@@ -48,27 +48,6 @@ const Division2 = styled.div`
   font-weight: 700;
 `
 
-const Division3 = styled.div`
-  margin: 0;
-  padding: 10px 10px 10px 20px;
-  clear: both;
-  border-bottom: 1px solid #ddd;
-  vertical-align: top;
-  display: block;
-  white-space: pre-wrap;
-  color: black;
-`
-
-const CSCenter = styled.div`
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: top;
-  font-size: 18px;
-  font-weight: bold;
-`
-
 const Hover = styled.span`
   &:hover{
     text-decoration-line: underline;
@@ -79,34 +58,18 @@ const Hover = styled.span`
     text-decoration-color: none;
   }
 `
-
-const Span2 = styled.span`
-  font-size:30px;
-`
-function ServicePage(props) {
+function CategoryPage(props) {
     return (
         <CategoryWrapper>
             <Sidebar></Sidebar>
             <RightArea>
                 <Division1>
                     <a href="/">&nbsp;&nbsp;&nbsp;&nbsp;<Hover>무신사 스토어</Hover></a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
-                    <a href="/service"><Hover>고객센터</Hover></a>
+                    <a href="/category"><Hover>카테고리</Hover></a>
                 </Division1>
                 <Division2>
-                    &nbsp;CS Center
+                    &nbsp;Category
                 </Division2>
-                <Division3>
-                    <CSCenter>
-                        <span>TEL.</span><Span2>9999-9999</Span2>
-                    </CSCenter>
-                    <div>
-                        - 평일 9:00 ~ 18:00
-
-                    </div>
-                    <div>
-                            - 토, 일, 공휴일 휴무
-                    </div>
-                </Division3>
             </RightArea>
         </CategoryWrapper>
     );
@@ -115,4 +78,4 @@ function ServicePage(props) {
 
 
 
-export default ServicePage;
+export default CategoryPage;
