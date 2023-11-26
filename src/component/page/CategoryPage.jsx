@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Sidebar from "../ui/Sidebar";
 import {Link, useLocation} from "react-router-dom"
 import HoverUnderline from "../styles/HoverUnderline"
+import Item from "../ui/Item";
+import WhiteHeader from "../ui/WhiteHeader";
 
 const CategoryWrapper = styled.div`
   clear: both;
@@ -24,7 +26,7 @@ const CategoryWrapper2 = styled.div`
   display: block;
   padding: 20px;
   
-    &:hover{background-color: rgb(208, 208, 208)}
+    &:hover{background-color: rgb(228, 228, 228)}
 `
 const CategoryWrapper3 = styled.div`
   background-color: white;
@@ -34,10 +36,11 @@ const CategoryWrapper3 = styled.div`
   margin: 5px;
   height: 100%;
   position: relative;
+  color: black;
 `
 
 const RightArea = styled.div`
-  width: 1290px;
+  width: calc(100% - 270px);
   position: absolute;
   display: block;
   left: 269px;
@@ -71,15 +74,38 @@ const Division2 = styled.div`
   font-weight: 700;
 `
 const Menu = styled.span`
-  color: white;
+  color: black;
   padding: 10px;
   font-size: 12px;
   font-weight: normal;
   &:hover{
     text-decoration: underline;
+    font-weight: bold;
   }
 `
 
+const Listbox = styled.div`
+  height: auto;
+  line-height: 14px;
+  width: 100%;
+  vertical-align: top;
+  display: block;
+  font-size: 12px;
+`
+const Searchlist = styled.ul`
+  margin-inline-end: -1px;
+  padding-right: -1px;
+  line-height: 14px;
+  display: table;
+  list-style: none;
+`
+
+const Content1 = styled.div`
+  color: grey;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid rgb(208, 208, 208);
+`
 function CategoryPage(props) {
     const location = useLocation();
     const category = location.state.category;
@@ -89,35 +115,52 @@ function CategoryPage(props) {
     console.log(location);
     console.log(subCategory);
     return (
-        <CategoryWrapper>
-            <Sidebar></Sidebar>
-            <RightArea>
-                <Division1>
-                    <Link to="/">&nbsp;&nbsp;&nbsp;&nbsp;<HoverUnderline>무신사 스토어</HoverUnderline></Link>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
-                    <Link to={`/categories/item/${categoryNumber}`} state={{category: `${category}`, categoryNumber: `${categoryNumber}`}}><HoverUnderline>{category}</HoverUnderline></Link>
-                    {
-                        subCategory === undefined ? null :
-                            <>
-                                <span>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;</span>
-                                <Link to={`/categories/item/${subCategoryNumber}`} state={{subCategory: `${subCategory}`, category: `${category}`, categoryNumber: `${categoryNumber}`, subCategoryNumber: `${subCategoryNumber}`}}><HoverUnderline>{subCategory}</HoverUnderline></Link>
-                            </>
-                    }
-                </Division1>
-                <Division2>
-                    &nbsp;{category}
-                </Division2>
-                <CategoryWrapper2>
-                    <CategoryWrapper3>
-                        <div style={{backgroundColor: "blue"}}>
-                            <Link to="/mypage"><Menu>마이페이지</Menu></Link>
-                            <Link to="/cart"><Menu>장바구니</Menu></Link>
-                            <Link to="/order"><Menu>주문배송조회</Menu></Link>
-                            <Link to="/service"><Menu>고객센터</Menu></Link>
-                        </div>
-                    </CategoryWrapper3>
-                </CategoryWrapper2>
-            </RightArea>
-        </CategoryWrapper>
+        <div>
+            <WhiteHeader></WhiteHeader>
+            <CategoryWrapper>
+                <Sidebar></Sidebar>
+                <RightArea>
+                    <Division1>
+                        <Link to="/">&nbsp;&nbsp;&nbsp;&nbsp;<HoverUnderline>Wearway</HoverUnderline></Link>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
+                        <Link to={`/categories/item/${categoryNumber}`} state={{category: `${category}`, categoryNumber: `${categoryNumber}`}}><HoverUnderline>{category}</HoverUnderline></Link>
+                        {
+                            subCategory === undefined ? null :
+                                <>
+                                    <span>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;</span>
+                                    <Link to={`/categories/item/${subCategoryNumber}`} state={{subCategory: `${subCategory}`, category: `${category}`, categoryNumber: `${categoryNumber}`, subCategoryNumber: `${subCategoryNumber}`}}><HoverUnderline>{subCategory}</HoverUnderline></Link>
+                                </>
+                        }
+                    </Division1>
+                    <Division2>
+                        &nbsp;{category}
+                    </Division2>
+                    <CategoryWrapper2>
+                        <CategoryWrapper3>
+                            <Content1>
+                                <Link to="/"><Menu>추천순</Menu></Link>|
+                                <Link to="/"><Menu>신상품순</Menu></Link>|
+                                <Link to="/"><Menu>낮은 가격순</Menu></Link>|
+                                <Link to="/"><Menu>높은 가격순</Menu></Link>
+                            </Content1>
+                            <Listbox>
+                                <Searchlist>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                    <Item></Item>
+                                </Searchlist>
+                            </Listbox>
+                        </CategoryWrapper3>
+                    </CategoryWrapper2>
+                </RightArea>
+            </CategoryWrapper>
+        </div>
     );
 }
 
