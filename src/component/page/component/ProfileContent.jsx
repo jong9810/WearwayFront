@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-function MyInformContent(props) {
+function ProfileContent(props) {
     return (
         <>
             <div style={{marginBottom: "10px"}}>
@@ -20,4 +20,4 @@ function MyInformContent(props) {
     );
 }
 
-export default MyInformContent;
+export default ProfileContent;

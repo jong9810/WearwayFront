@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import MyInform from "./mypage/ui/MyInform";
-import MyPageSidebar from "./mypage/ui/MyPageSidebar";
+import MyInform from "../component/MyInform";
+import MyPageSidebar from "../component/MyPageSidebar";
+import MyPageMain from "./MyPageMain";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
 `;
 
-const HeaderWrapper = styled.div`
+const Header = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,22 +20,22 @@ const HeaderWrapper = styled.div`
   color: white;
 `;
 
-const BodyWrapper = styled.div`
+const Body = styled.div`
   display: flex;
   flex-direction: row;
-  width: 75%;
-  height: 100%;
+  width: 100%;
 `;
 
 function MyPage(props) {
     return (
         <Wrapper>
-            <HeaderWrapper>
+            <Header>
                 <MyInform />
-            </HeaderWrapper>
-            <BodyWrapper>
+            </Header>
+            <Body>
                 <MyPageSidebar />
-            </BodyWrapper>
+                <MyPageMain menu={props.menu} />
+            </Body>
         </Wrapper>
     );
 }

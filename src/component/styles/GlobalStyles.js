@@ -14,7 +14,8 @@ const GlobalStyles = createGlobalStyle`
    .App {
      display: block;
      min-height: 100%;
-     width: 1560px;
+     width: 100%;
+     min-width: 1560px;
    }
 `
 
